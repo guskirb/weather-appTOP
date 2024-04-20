@@ -10,6 +10,7 @@ const tomorrowTempF = document.getElementById('tomorrowTempF');
 const dayAfterTempC = document.getElementById('dayAfterTempC');
 const dayAfterTempF = document.getElementById('dayAfterTempF');
 const condition = document.getElementById('condition');
+const weatherImg = document.querySelector('.weatherIcon');
 const humidity = document.getElementById('humidity');
 const wind = document.getElementById('wind');
 const tomorrowDate = document.getElementById('tomorrowDate');
@@ -56,6 +57,7 @@ export default class Render {
 
     renderCondition() {
         condition.textContent = this.data.current.condition.text;
+        weatherImg.src = this.data.current.condition.icon;
         six[0].src = this.data.forecast.forecastday[0].hour[6].condition.icon;
         six[1].src = this.data.forecast.forecastday[1].hour[6].condition.icon;
         six[2].src = this.data.forecast.forecastday[2].hour[6].condition.icon;
