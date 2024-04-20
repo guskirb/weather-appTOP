@@ -23,6 +23,7 @@ async function getWeather(value) {
 
 search.addEventListener('click', () => {
     getWeather(input.value);
+    input.value = "";
 })
 
 tempUnit.addEventListener('change', () => {
