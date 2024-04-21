@@ -18,6 +18,8 @@ const dayAfterDate = document.getElementById('dayAfterDate');
 const six = document.getElementsByClassName('six');
 const twelve = document.getElementsByClassName('twelve');
 const eighteen = document.getElementsByClassName('eighteen');
+const background = document.querySelector('body');
+const weatherGif = document.getElementById('weatherGif');
 
 export default class Render {
     constructor(data) {
@@ -28,6 +30,10 @@ export default class Render {
         this.condition = this.renderCondition();
         this.humidity = this.renderHumidity();
         this.wind = this.renderWind();
+        this.time = new Date(data.location.localtime)
+            .toLocaleTimeString('en-UK', { hour: '2-digit' });
+        this.background = this.renderBackground();
+        this.renderWeather();
     }
 
     renderLocation() {
@@ -67,6 +73,7 @@ export default class Render {
         eighteen[0].src = this.data.forecast.forecastday[0].hour[18].condition.icon;
         eighteen[1].src = this.data.forecast.forecastday[1].hour[18].condition.icon;
         eighteen[2].src = this.data.forecast.forecastday[2].hour[18].condition.icon;
+        this.renderWeather();
     }
 
     renderHumidity() {
@@ -77,5 +84,30 @@ export default class Render {
         wind.textContent = `${this.data.current.wind_dir} ${this.data.current.wind_kph}km/h`;
     }
 
+    renderBackground() {
+        if (this.time < 4) {
+            background.style.backgroundImage = 'var(--midnight)';
+        } else if (this.time < 7) {
+            background.style.backgroundImage = 'var(--sunrise)';
+        } else if (this.time < 17) {
+            background.style.backgroundImage = 'var(--midday)';
+        } else if (this.time < 19) {
+            background.style.backgroundImage = 'var(--sunset)';
+        } else {
+            background.style.backgroundImage = 'var(--midnight)';
+        }
+    }
 
+    renderWeather() {
+        const weather = this.data.current.condition.text.toLowerCase();
+        if (weather.includes("overcast") || weather.includes("cloudy") || weather.includes("mist") || weather.includes("fog")) {
+            weatherGif.style.backgroundImage = "var(--clouds)";
+        } if (weather.includes("drizzle") || weather.includes("rain")) {
+            weatherGif.style.backgroundImage = "var(--rain)";
+        } if (weather.includes("snow") || weather.includes("sleet")) {
+            weatherGif.style.backgroundImage = "var(--snow)";
+        } else if (weather.includes("clear") || weather.includes("sunny")) {
+            weatherGif.style.backgroundImage = "";
+        }
+    }
 }

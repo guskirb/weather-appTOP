@@ -14,6 +14,7 @@ async function getWeather(value) {
 
         const weatherData = await response.json();
         const current = new Render(weatherData);
+        console.log(current.data.current.condition.text);
         return current;
 
     } catch (error) {
