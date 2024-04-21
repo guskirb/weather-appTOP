@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Weather App
+    </title>
+    <link rel="icon" href="./src/icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+<link rel="icon" href="icon.ico"><script defer src="bundle723d1efd6f92e3f878a2.js"></script></head>
+
+<body>
+    <div id='weatherGif'>
+        <main class="container">
+            <div class="left">
+                <div id="search">
+                    <div>
+                        <input type="text" id="locationInput">
+                        <div id="searchButton"></div>
+                    </div>
+                    <select name="tempUnit" id="tempUnit">
+                        <option value="celsius" selected>Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                    </select>
+                </div>
+                <div id="leftUpper">
+                    <h1 id="location"></h1>
+                    <h2 id="time"></h2>
+                    <h2 id="date"></h2>
+                </div>
+                <div id="currentTempC" class="tempC"></div>
+                <div id="currentTempF" class="tempF hide"></div>
+                <img src="" alt="" class="weatherIcon">
+                <div id="condition"></div>
+                <div id="bottom">
+                    <div>
+                        <div class="humidIcon"></div>
+                        <div id="humidity"></div>
+                    </div>
+                    <div>
+                        <div class="windIcon"></div>
+                        <div id="wind"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right">
+                <div class="today">
+                    <div>Today</div>
+                    <div id="todayTempC" class="tempC"></div>
+                    <div id="todayTempF" class="tempF hide"></div>
+                    <img src="" alt="" class="six">
+                    <img src="" alt="" class="twelve">
+                    <img src="" alt="" class="eighteen">
+                    <div>6:00</div>
+                    <div>12:00</div>
+                    <div>18:00</div>
+                </div>
+                <div class="tomorrow">
+                    <div id="tomorrowDate"></div>
+                    <div id="tomorrowTempC" class="tempC"></div>
+                    <div id="tomorrowTempF" class="tempF hide"></div>
+                    <img src="" alt="" class="six">
+                    <img src="" alt="" class="twelve">
+                    <img src="" alt="" class="eighteen">
+                    <div>6:00</div>
+                    <div>12:00</div>
+                    <div>18:00</div>
+                </div>
+                <div class="dayAfter">
+                    <div id="dayAfterDate"></div>
+                    <div id="dayAfterTempC" class="tempC"></div>
+                    <div id="dayAfterTempF" class="tempF hide"></div>
+                    <img src="" alt="" class="six">
+                    <img src="" alt="" class="twelve">
+                    <img src="" alt="" class="eighteen">
+                    <div>6:00</div>
+                    <div>12:00</div>
+                    <div>18:00</div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
