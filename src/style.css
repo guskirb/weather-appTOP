@@ -6,19 +6,19 @@
 }
 
 * {
-  color: #ffffffde;
+  color: #ffffff;
 }
 
 :root {
   --font-color: #4e4e4e;
-  --box-color: #ffffff2a;
+  --box-color: #ffffff46;
   --input-color: #ffffffbe;
   --border-radius: 20px;
   --box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   --midday: linear-gradient(#6bcfff, #4bc5ff, #33beff, #27b9ff, #00adff);
   --midnight: linear-gradient(#282442, #1d1936, #131122, #0a0913, #000000);
   --sunset: linear-gradient(#01084f, #391954, #631e50, #a73c5a, #ff7954);
-  --sunrise: linear-gradient(#b5d6e0, #c7e1e5, #ffef7a, #f7c16a, #f46a55);
+  --sunrise: linear-gradient(#95b3bd, #84b1b8, #d6c967, #daaa5f, #f46a55);
   --rain: url(../src/rain.gif);
   --clouds: url(../src/clouds.png);
   --snow: url(../src/snow.gif);
@@ -51,6 +51,7 @@ body {
   display: flex;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  backdrop-filter: blur(10px);
 }
 
 .left {
