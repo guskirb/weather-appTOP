@@ -45,6 +45,3 @@ tempUnit.addEventListener('change', () => {
 
 const currentWeather = getWeather("london");
 
-console.log(currentWeather);
-
-
